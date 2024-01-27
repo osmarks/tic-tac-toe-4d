@@ -1,0 +1,25 @@
+[package]
+name = "tic-tac-toe-4d"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+yew = "0.19"
+wasm-logger = "0.2"
+log = "0.4"
+lazy_static = "1"
+fixedbitset = "0.4"
+include-base64 = "0.1"
+web-sys = "0.3"
+wasm-bindgen = "0.2"
+bincode = { version = "2.0.0-rc.3", features = ["derive"] }
+
+[profile.release]
+lto = true
+opt-level = "s"
+codegen-units = 1
+
+[lib]
+crate-type = ["rlib", "cdylib"]
